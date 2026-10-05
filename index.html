@@ -195,7 +195,7 @@ svg{display:block}
 .prose h3{margin:2.25rem 0 .75rem}
 .prose p+p{margin-top:1.1em}
 .split{display:grid;grid-template-columns:minmax(0,var(--measure)) minmax(0,1fr);gap:clamp(32px,6vw,120px);align-items:start}
-.quote{margin:0;position:sticky;top:110px;max-width:34rem;padding-top:4px}
+.quote{margin:0;position:sticky;top:110px;max-width:34rem;padding-top:clamp(40px,4vw,56px)}
 .quote blockquote{margin:20px 0 0;color:var(--ink);font-size:clamp(1.375rem,1.1rem + .9vw,1.875rem);line-height:1.3;font-weight:500;letter-spacing:-.015em}
 .quote figcaption{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.975rem;max-width:var(--short)}
 .audience{margin-top:clamp(56px,7vw,96px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(180px,1fr) 4fr;gap:24px clamp(32px,6vw,120px);align-items:start}
@@ -657,12 +657,12 @@ body.notes .dnote{display:block}
 <!-- PROSE -->
 <section class="section">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Подробнее</div>
-      <h2>Чем занимается юрист в строительстве</h2>
-    </div>
     <div class="split">
       <article class="prose">
+        <div class="head">
+          <div class="eyebrow">Подробнее</div>
+          <h2>Чем занимается юрист в строительстве</h2>
+        </div>
         <p>Строительный юрист решает правовые вопросы, связанные с реализацией строительных проектов. В отличие от универсального юриста, у него узкопрофильные знания и опыт именно в этой отрасли.</p>
         <p>Юридическое сопровождение помогает избежать многих проблем, с которыми сталкиваются застройщики, проектировщики, подрядчики и субподрядчики.</p>
         <h3>Многообразие задач</h3>
