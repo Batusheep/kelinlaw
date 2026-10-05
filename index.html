@@ -84,8 +84,8 @@ svg{display:block}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
 .hero-art{color:var(--ink);max-width:460px;justify-self:end;width:100%}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,48px);margin-top:clamp(56px,8vw,96px);padding-top:32px;border-top:1px solid var(--line)}
-.fact b{display:block;font-size:clamp(1.75rem,1.4rem + 1vw,2.25rem);font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.1}
-.fact span{display:block;margin-top:.5rem;font-size:.9375rem;color:var(--muted);max-width:26ch}
+.fact h3{font-size:1.0625rem}
+.fact span{display:block;margin-top:.5rem;font-size:.9375rem;color:var(--muted);max-width:34ch}
 @media (max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-art{justify-self:start;max-width:300px}.facts{grid-template-columns:1fr}}
 
 /* Problems */
@@ -121,7 +121,7 @@ svg{display:block}
 .offer h2{color:#fff}
 .offer p{margin-top:.75rem;max-width:48ch}
 .offer .btn-primary{white-space:nowrap}
-@media (max-width:720px){.offer{grid-template-columns:1fr}}
+@media (max-width:720px){.offer{grid-template-columns:minmax(0,1fr)}.offer .btn-primary{white-space:normal;text-align:center}}
 
 /* Pricing */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:20px}
@@ -230,12 +230,34 @@ input:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 
 footer{background:var(--surface);padding:56px 0 40px;font-size:.9375rem;color:var(--muted)}
 .foot{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:32px}
 .foot b{display:block;color:var(--ink);font-weight:500;margin-bottom:.75rem}
-.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;align-content:start}
 .foot a{color:var(--muted);text-decoration:none}
 .foot a:hover{color:var(--ink)}
 .legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8125rem}
 @media (max-width:820px){.foot{grid-template-columns:1fr 1fr}}
 @media (max-width:480px){.foot{grid-template-columns:1fr}}
+
+
+/* Примеры из отрасли */
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.case{background:#fff;padding:20px 24px;display:grid;gap:6px;font-variant-numeric:tabular-nums}
+.case b{color:var(--ink);font-weight:500}
+.case .sum{display:flex;justify-content:space-between;gap:12px;font-size:.9375rem;color:var(--muted)}
+.case .sum strong{color:var(--ink);font-weight:600;white-space:nowrap}
+.case small{font-size:.8125rem;color:var(--muted)}
+.case.hl{background:var(--accent-soft)}
+.inline-cta{margin-top:clamp(40px,5vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:24px 28px;border:1px solid var(--line);border-radius:var(--radius)}
+.inline-cta b{display:block;color:var(--ink);font-weight:600;font-size:1.0625rem}
+.inline-cta span{color:var(--muted);font-size:.9375rem}
+.box{display:grid;grid-template-columns:minmax(0,var(--measure)) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.box+.box{margin-top:clamp(48px,6vw,72px)}
+.box p+p{margin-top:1.1em}
+.figure{display:grid;gap:14px;justify-items:start;color:var(--ink)}
+.figure span{font-size:.875rem;font-weight:500;color:var(--ink);padding:6px 12px;border:1px solid var(--line);border-radius:999px}
+@media (max-width:900px){.box{grid-template-columns:1fr}.box .figure{order:-1}}
+.offer .btn-ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+.offer .btn-ghost:hover{border-color:#fff;color:#fff}
+.msg-line{margin-top:20px;font-size:.9375rem;color:var(--muted)}
 
 /* Пометки дизайнера */
 .dnote{display:none;margin:12px 0 0;padding:10px 14px;font-size:.8125rem;line-height:1.5;color:#7a4b00;background:#fff7e6;border:1px dashed #f0b35a;border-radius:8px;max-width:var(--measure)}
@@ -261,18 +283,18 @@ body.notes .dnote{display:block}
       KELIN
     </a>
     <nav class="nav" aria-label="Основное меню">
-      <a href="#">Услуги</a>
       <a href="#">Как мы работаем</a>
-      <a href="#">Кейсы</a>
+      <a href="#">Медиацентр</a>
       <a href="#">О компании</a>
+      <a href="#">Контакты</a>
     </nav>
-    <a class="phone" href="tel:+74954877007">8 495 487-70-07</a>
-    <a class="btn btn-primary" href="#contact">Задать вопрос</a>
+    <a class="phone" href="tel:+74954877007">8 (495) 487-70-07</a>
+    <a class="btn btn-primary" href="#contact">Задать вопрос юристу</a>
     <details class="menu">
       <summary aria-label="Открыть меню"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M3 7h16M3 15h16" stroke="#1e2328" stroke-width="1.6" stroke-linecap="round"/></svg></summary>
       <div class="menu-panel">
-        <a href="#">Услуги</a><a href="#">Как мы работаем</a><a href="#">Кейсы</a><a href="#">О компании</a>
-        <a href="tel:+74954877007">8 495 487-70-07</a>
+        <a href="#">Как мы работаем</a><a href="#">Медиацентр</a><a href="#">О компании</a><a href="#">Контакты</a>
+        <a href="tel:+74954877007">8 (495) 487-70-07</a>
         <a class="btn btn-primary" href="#contact">Задать вопрос юристу</a>
       </div>
     </details>
@@ -290,45 +312,36 @@ body.notes .dnote{display:block}
     </ol>
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">Для строительных компаний</div>
+        <div class="eyebrow">Юридическая поддержка строительных компаний</div>
         <h1>Юрист по строительным спорам</h1>
-        <p class="lead">Снижаем правовые риски на всём цикле стройки: от договора подряда до взыскания по решению суда. Берём и сложные споры, и ежедневную рутину.</p>
+        <p class="lead">Юрист по сопровождению строительства снижает правовые риски бизнесов в строительной сфере через решение как сложных, так и рутинных юридических задач бизнеса.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#contact">Получить консультацию <svg class="arrow"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="#pricing">Стоимость</a>
         </div>
-        <p class="dnote">Заголовок уменьшен примерно вдвое и ограничен по ширине. Одна главная кнопка вместо двух одинаковых синих «Получить консультацию»; вторичное действие оформлено нейтрально.</p>
+        <p class="dnote">Заголовок уменьшен примерно вдвое и ограничен по ширине. Вместо двух одинаковых синих кнопок «Получить консультацию» одна.</p>
       </div>
 
-      <!-- Векторная иллюстрация: каркас здания + договор -->
       <svg class="hero-art" viewBox="0 0 440 380" role="img" aria-label="Схема: каркас строящегося здания и договор подряда">
         <g fill="none" stroke="#1e2328" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-          <!-- сетка-чертёж -->
           <g stroke="#e4e6ea" stroke-width="1">
             <path d="M20 340H420M20 300H420M20 260H420M20 220H420M20 180H420M20 140H420M20 100H420M20 60H420"/>
             <path d="M60 30V350M100 30V350M140 30V350M180 30V350M220 30V350M260 30V350M300 30V350M340 30V350M380 30V350"/>
           </g>
-          <!-- кран -->
           <path d="M300 340V70M300 70H410M300 70H270M300 70L330 40L300 70M330 40V70M300 110L330 70M300 150L330 110M300 110H330V70M300 150H330V110"/>
           <path d="M392 70V128" stroke-dasharray="3 4"/>
           <rect x="384" y="128" width="16" height="12" rx="1"/>
           <path d="M270 70v12h-14V70"/>
-          <!-- каркас здания -->
           <path d="M80 340V140H240V340"/>
           <path d="M80 180H240M80 220H240M80 260H240M80 300H240"/>
           <path d="M133 140V340M187 140V340"/>
           <path d="M80 140L133 180M133 140L187 180M187 140L240 180" stroke="#c3c7cd"/>
           <path d="M60 340H260"/>
-          <!-- готовые этажи -->
           <g fill="#f6f7f8"><rect x="80" y="260" width="160" height="80" stroke="#1e2328"/></g>
           <path d="M100 280h16v16h-16zM152 280h16v16h-16zM204 280h16v16h-16zM100 312h16v28M152 312h16v16h-16zM204 312h16v16h-16z"/>
         </g>
-        <!-- договор поверх -->
         <g transform="translate(176 188) rotate(-4)">
           <rect x="0" y="0" width="132" height="160" rx="6" fill="#fff" stroke="#1e2328" stroke-width="1.25"/>
-          <g stroke="#c3c7cd" stroke-width="1.25" stroke-linecap="round">
-            <path d="M18 54H114M18 68H114M18 82H96M18 104H114M18 118H84"/>
-          </g>
+          <g stroke="#c3c7cd" stroke-width="1.25" stroke-linecap="round"><path d="M18 54H114M18 68H114M18 82H96M18 104H114M18 118H84"/></g>
           <path d="M18 30H78" stroke="#1e2328" stroke-width="2" stroke-linecap="round"/>
           <path d="M18 140c8-10 14 4 22-4s10 6 18 0" fill="none" stroke="#1e2328" stroke-width="1.25" stroke-linecap="round"/>
           <circle cx="102" cy="134" r="14" fill="none" stroke="#235ffa" stroke-width="1.5"/>
@@ -338,11 +351,11 @@ body.notes .dnote{display:block}
     </div>
 
     <div class="facts">
-      <div class="fact"><b>20+</b><span>строительных компаний на постоянном сопровождении</span></div>
-      <div class="fact"><b>≤ 2 дней</b><span>на ответ по любой задаче, это закреплено в договоре</span></div>
-      <div class="fact"><b>1 координатор</b><span>отвечает понятным языком там, где удобно вам</span></div>
+      <div class="fact"><h3>Глубокая экспертиза в отрасли</h3><span>Более 20 строительных компаний с нами на регулярном сопровождении</span></div>
+      <div class="fact"><h3>Быстрые ответы</h3><span>Бизнес не должен ждать долгих ответов, наши строительные юристы отдают решение не дольше 2-х дней</span></div>
+      <div class="fact"><h3>Удобные процессы</h3><span>Закрепляем за Вами юриста-координатора, отвечаем понятным языком и общаемся там, где удобно Вам</span></div>
     </div>
-    <p class="dnote">Три преимущества вынесены в спокойную строку фактов: цифра крупно, пояснение мелко. Раньше это были три одинаковые синие плашки без иерархии.</p>
+    <p class="dnote">Три преимущества вынесены в спокойную строку под первым экраном вместо трёх одинаковых синих плашек.</p>
   </div>
 </section>
 
@@ -350,90 +363,117 @@ body.notes .dnote{display:block}
 <section class="section" id="problems">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Риски отрасли</div>
-      <h2>В строительстве юридические ошибки обходятся дороже всего</h2>
-      <p>Чаще всего к нам приходят с одной из этих ситуаций.</p>
+      <h2>В нише строительства много юридических проблем</h2>
     </div>
     <div class="problems">
       <article class="problem">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="5" width="20" height="26" rx="2"/><path d="M13 12h10M13 17h10M13 22h6"/><path d="M28 24l6 6M24 30l4-4" /><circle cx="31" cy="27" r="0.1"/><path d="M12 31v4h20"/></svg>
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="5" width="22" height="28" rx="2"/><path d="M14 12h12M14 17h12M14 22h7"/><path d="M14 28c3-3 5 1 7-1s3 2 5 0"/></svg>
         <h3>Сложные договоры подряда</h3>
-        <p>Неточно прописанные условия потом дорого обходятся в суде. Важно правильно выстроить цепочку договоров от гензаказчика до субподрядчиков.</p>
+        <p>Неправильно прописанные условия в дальнейшем дорого обходятся в суде. Поэтому важно корректно выстраивать договорную цепочку от гензаказчика к субподрядчикам</p>
       </article>
       <article class="problem">
-        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 34V14l14-8 14 8v20"/><path d="M6 34h28"/><rect x="15" y="22" width="10" height="12"/><path d="M11 18l18 14M29 18L11 32" /></svg>
-        <h3>Проблемы при исполнении контракта</h3>
-        <p>Заказчик закрывает доступ на площадку, не передаёт документацию, мешает работать. Потом это мешает получить оплату или вернуть аванс.</p>
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 34V14l14-8 14 8v20"/><path d="M6 34h28"/><rect x="15" y="22" width="10" height="12"/><path d="M11 18l18 14M29 18L11 32"/></svg>
+        <h3>Проблемы при исполнении контрактов</h3>
+        <p>Заказчик блокирует доступ к площадке, препятствует и усложняет выполнение работ, не предоставляет необходимую документацию. Это в будущем будет препятствовать получению оплаты или возврата аванса</p>
       </article>
       <article class="problem">
         <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="26" height="26" rx="2"/><path d="M7 14h26"/><path d="M13 4v6M27 4v6"/><path d="M15 21l10 8M25 21l-10 8"/></svg>
-        <h3>Сдача и приёмка работ</h3>
-        <p>Необоснованный отказ от приёмки или ошибки в оформлении сдвигают сроки и осложняют будущий спор.</p>
+        <h3>Проблемы при сдаче-приемке работ</h3>
+        <p>Необоснованный отказ от приемки или некорректное оформление процедур приемки влечет за собой риск смещения сроков. Это усложняет ведение судов</p>
       </article>
       <article class="problem">
         <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15h28L20 6z"/><path d="M10 15v14M17 15v14M23 15v14M30 15v14"/><path d="M5 33h30"/></svg>
         <h3>Госзакупки по 44-ФЗ и 223-ФЗ</h3>
-        <p>Необоснованное отклонение заявок, риск попасть в реестр недобросовестных поставщиков, споры с ФАС.</p>
+        <p>Необоснованное отклонение заявок на участие, риски внесения в реестр недобросовестных поставщиков (РНП), взаимодействие с ФАС</p>
       </article>
       <article class="problem">
         <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 20a10 10 0 0 1 20 0"/><path d="M7 20h26v3H7z"/><path d="M20 10v4"/><path d="M13 27c0 4 3 7 7 7s7-3 7-7"/></svg>
         <h3>Риски, связанные с персоналом</h3>
-        <p>Недопуски на объект, хищения материалов, производственные травмы и другие кадровые вопросы.</p>
+        <p>Недопуски на объект, кража материальных ценностей, производственные травмы и многие другие проблемы</p>
       </article>
       <article class="problem cta">
         <div>
-          <h3>Вашей ситуации нет в списке?</h3>
-          <p>Опишите задачу, и юрист по строительным спорам предложит решение.</p>
+          <h3>Тут может быть ваша проблема</h3>
+          <p>Закажите консультацию у нашего юриста по строительным вопросам</p>
         </div>
         <a href="#contact">Подобрать решение <svg class="arrow"><use href="#i-arrow"/></svg></a>
       </article>
     </div>
-    <p class="dnote">Растровые картинки заменены монохромными линейными иконками, которые совпадают по смыслу с текстом (договор, площадка, календарь приёмки, госзакупки, каска). Карточки выровнены по общей сетке и одинаковы по высоте.</p>
+    <p class="dnote">Растровые картинки заменены линейными иконками по смыслу текста: договор, площадка, календарь приёмки, госзакупки, каска. Карточки выровнены по сетке и одной высоты.</p>
   </div>
 </section>
 
-<!-- LIFECYCLE -->
+<!-- WHY -->
+<section class="section">
+  <div class="wrap">
+    <div class="head"><h2>Почему более 100 российских компаний выбирают KELIN</h2></div>
+    <div class="benefits">
+      <div class="benefit"><h3>Наличие ресурса для решения задач клиентов</h3><p>Несколько десятков юристов в штате, а еще курьеры, специалисты по коммуникациям с гос.органами и партнеры для проведения экспертиз</p></div>
+      <div class="benefit"><h3>Богатая база решений</h3><p>Большая база решений по всем направлениям права: договоры, документы по сотрудникам, формы обращений в гос.органы и многое другое</p></div>
+      <div class="benefit"><h3>Справедливая стоимость</h3><p>Цена формируется индивидуально под задачи клиента, фиксируется и платится ежемесячно. Вам не надо согласовывать стоимость каждой задачи отдельно. Просто ставьте их юристам и получайте решения</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="wrap">
+    <div class="head"><h2>Клиенты говорят о нас</h2></div>
+    <div class="reviews">
+      <article class="review">
+        <blockquote>“Мы сотрудничаем с KELIN почти 2 года. Наше сотрудничество с данной юридической фирмой началось с представления наших интересов в суде.</blockquote>
+        <details><summary>Читать полностью</summary>
+          <p>Юристы KELIN решают все наши вопросы в плоскости претензионно-исковой работы. В одном из судебных споров в иске против нашей компании наши партнеры смогли не только отстоять ее интересы, но и взыскать встречным иском с оппонентов ущерб в двукратном размере.</p>
+          <p>Мы подтверждаем сильные компетенции KELIN в вопросах сопровождения судов и претензионной работы.</p>
+          <p>Сейчас юристы KELIN на постоянной основе ведут для нас претензионно-исковую работу с должниками, помогают в сфере интеллектуальной собственности и решают споры с сотрудниками.”</p>
+        </details>
+        <div class="who"><span class="mono">НЯ</span><div><b>Натарова Яна</b><span>Генеральный директор · DEKART</span></div></div>
+      </article>
+      <article class="review">
+        <blockquote>“Благодарим компанию KELIN за комплексное юридическое сопровождение. Коллеги всегда на связи, оперативно и полном объеме решают наши задачи.</blockquote>
+        <details><summary>Читать полностью</summary>
+          <p>Юристы KELIN полностью отвечают за корпоративный блок: проводят аудит, вносят необходимые изменения в уставные документы, выявляют основные риски в законодательной части.</p>
+          <p>Также партнёры занимаются вопросами трудового права — разрабатывают ключевые документы. Консультируют наших сотрудников и контрагентов по вопросам соблюдения конфиденциальности и коммерческой тайны.</p>
+          <p>Хотим отметить вовлеченность юристов KELIN в бизнес и внимание к деталям. Будем продолжать наше сотрудничество на постоянной основе.</p>
+          <p>Компанию KELIN к сотрудничеству рекомендуем!"</p>
+        </details>
+        <div class="who"><span class="mono">ДЮ</span><div><b>Дудина Юлия</b><span>Генеральный директор · DSM</span></div></div>
+      </article>
+      <article class="review">
+        <blockquote>“Группа компаний «SSI SCHÄFER» (Германия) – мировой лидер в области разработки, производства и поставки оборудования.</blockquote>
+        <details><summary>Читать полностью</summary>
+          <p>Мы предлагаем комплексные решения по организации современных складских комплексов или логистических центров, оказываем услуги по комплексной автоматизации производственных и логистических процессов.</p>
+          <p>К юридической компании KELIN мы обратились по рекомендации после увольнения нашего штатного юриста. Юристы оперативно консультируют по вопросам договорных задач (в том числе разрабатывали для нас договор на выполнение НИОКР), по вопросам трудового и корпоративного права. Также мы ставили задачи, связанные с таможенным и интеллектуальным правом.</p>
+          <p>Мы хотим отметить системность работы, что для нас очень важно. Рекомендуем юридическую компанию KELIN всем нашим деловым партнёрам!"</p>
+        </details>
+        <div class="who"><span class="mono">БА</span><div><b>Белинский Андрей</b><span>Генеральный директор · SSI SCHÄFER</span></div></div>
+      </article>
+    </div>
+    <div class="inline-cta">
+      <div><b>Запросить рекомендации коллег по цеху</b><span>Мы готовы предоставить вам как письменные, так и устные рекомендации наших клиентов</span></div>
+      <a class="btn btn-ghost" href="#contact">прислать рекомендации</a>
+    </div>
+    <p class="dnote">Текст отзывов не изменён: первый абзац виден сразу, остальное раскрывается по клику, поэтому карточки одной высоты. Вместо фото нейтральные монограммы.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
 <section class="section" id="services">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Что мы делаем</div>
       <h2>Решаем юридические задачи, пока вы строите</h2>
-      <p>Сопровождаем компанию на каждом этапе проекта, а не только когда дело дошло до суда.</p>
+      <p>Юридическое сопровождение строительных компаний включает в себя широкий спектр услуг для защиты интересов клиента на всех этапах:</p>
     </div>
+    <p class="lead" style="margin-bottom:clamp(40px,5vw,56px);color:var(--ink)">Решаем все юридические задачи, которые у вас есть. Не беспокойтесь об исполнителе. Просто ставьте задачу, а решение найдем мы</p>
     <ol class="stages">
-      <li class="stage">
-        <div class="dot"><i></i></div>
-        <small>Этап 1</small>
-        <h3>Договор</h3>
-        <p>Договоры подряда любой сложности, включая специальные инвестиционные контракты. Цепочка договоров гензаказчик → подрядчик → субподрядчики.</p>
-      </li>
-      <li class="stage">
-        <div class="dot"><i></i></div>
-        <small>Этап 2</small>
-        <h3>Исполнение</h3>
-        <p>Документально фиксируем переписку и действия сторон, чтобы позиция была доказуема.</p>
-      </li>
-      <li class="stage">
-        <div class="dot"><i></i></div>
-        <small>Этап 3</small>
-        <h3>Сдача и приёмка</h3>
-        <p>Консультируем при отказе от приёмки и уклонении от устранения дефектов.</p>
-      </li>
-      <li class="stage key">
-        <div class="dot"><i></i></div>
-        <small>Этап 4</small>
-        <h3>Спор</h3>
-        <p>Строительные споры под ключ: претензии, иск, представительство в суде.</p>
-      </li>
-      <li class="stage">
-        <div class="dot"><i></i></div>
-        <small>Этап 5</small>
-        <h3>Взыскание</h3>
-        <p>Сопровождаем исполнительное производство и работу с приставами.</p>
-      </li>
+      <li class="stage"><div class="dot"><i></i></div><small>01</small><p>Делаем договоры подряда любой сложности, включая специальные инвестиционные контракты</p></li>
+      <li class="stage"><div class="dot"><i></i></div><small>02</small><p>Выстраиваем цепочку договоров между гензаказчиком, подрядчиком и его субподрядчиками</p></li>
+      <li class="stage"><div class="dot"><i></i></div><small>03</small><p>Документально оформляем коммуникацию между контрагентами при исполнении контракта</p></li>
+      <li class="stage"><div class="dot"><i></i></div><small>04</small><p>Проводим консультации юриста по строительству в таких сложных ситуациях на этапе сдачи-приемки работ, как необоснованный отказ от приемки и уклонение от исправления дефектов</p></li>
+      <li class="stage key"><div class="dot"><i></i></div><small>05</small><p>Решаем строительные споры под ключ, включая претензионно-исковую работу, сопровождение на этапе приставов</p></li>
     </ol>
-    <p class="note-full">Отдельно ведём госконтракты: от подачи заявки до споров с ФАС и защиты от включения в РНП.</p>
-    <p class="dnote">Сплошной список услуг превращён в линию жизненного цикла стройки. Синим отмечен только этап «Спор», потому что страница про споры. На телефоне линия становится вертикальной.</p>
+    <p class="note-full">Поддерживаем компанию на всех этапах госконтракта, включая решение спорных ситуаций с ФАС и защиту от включения в РНП</p>
+    <p class="dnote">Сплошной список услуг выстроен в линию по ходу стройки, от договора до приставов. Синим выделен только пункт про споры, потому что страница о них. На телефоне линия идёт вертикально.</p>
   </div>
 </section>
 
@@ -442,10 +482,11 @@ body.notes .dnote{display:block}
   <div class="wrap">
     <div class="offer">
       <div>
-        <h2>Первую задачу решим бесплатно</h2>
-        <p>Мы готовы проверить свою компетенцию на деле. Пришлите реальную задачу, а оценку работы оставьте себе.</p>
+        <h2>Давайте решим Вашу первую задачу бесплатно</h2>
+        <p>Мы готовы к тесту наших компетенций, предлагайте задачу</p>
+        <p class="msg-line" style="color:#9aa1a9">Вместо заявки можно сразу написать нам в мессенджеры</p>
       </div>
-      <a class="btn btn-primary" href="#contact">Предложить задачу</a>
+      <a class="btn btn-primary" href="#contact">Получить специальные условия</a>
     </div>
   </div>
 </section>
@@ -454,61 +495,56 @@ body.notes .dnote{display:block}
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Стоимость</div>
-      <h2>Цена под ваши задачи, без тарифной сетки</h2>
-      <p>Фиксируем ежемесячный платёж, и вам не нужно согласовывать стоимость каждой задачи. Ниже ориентиры по текущим контрактам.</p>
+      <h2>Индивидуальный расчёт стоимости</h2>
+      <p>Не загоняем клиентов в тарифные рамки — рассчитываем стоимость исходя из специфики бизнеса. Ниже примеры текущих контрактов.</p>
     </div>
     <div class="plans">
-      <article class="plan featured">
-        <span class="tag">Чаще выбирают стройкомпании</span>
-        <h3>Комплексный аутсорсинг</h3>
-        <p class="for">Задачи регулярные, но штатного юриста держать невыгодно.</p>
+      <article class="plan">
+        <h3>Комплексный юридический аутсорсинг</h3>
+        <p class="for">Когда задачи регулярные, но не достаточно для найма штатного юриста</p>
         <ul>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Разработка и проверка договоров</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Консультации по всем отраслям права</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Претензии и ведение судов</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Трудовые документы и консультации</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Проектные задачи: реорганизация, товарные знаки</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Ведение договорной работы (разработка, проверка)</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Консультирование по всем направлениям права</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Работа с претензиями, комплексное ведение судов</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Документы и консультации по трудовому праву</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Решение различных проектных задач (открытие/реорганизация/ликвидация юр.лиц, регистрация товарных знаков и т.п.)</li>
         </ul>
-        <div class="price"><b>от 30 000 ₽ <small>/ мес</small></b><a href="#contact">Подробнее</a></div>
+        <div class="price"><b>от 30 000₽<small>/месяц</small></b><a href="#contact">узнать подробности</a></div>
       </article>
       <article class="plan">
         <h3>В поддержку штатному юристу</h3>
-        <p class="for">Нужно усилить своего юриста или подменить на время отпуска.</p>
+        <p class="for">Когда необходимо усилить штатного юриста</p>
         <ul>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Рутина: договоры, консультации сотрудников</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Проекты: ИС, претензионно-исковая работа, корпоративное управление</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Подмена на период отпуска</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Ведение любых рутинных задач: договорный блок или консультации сотрудников</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Ведение проектных задач (интеллектуальное право, претензионно-исковая работа, корпоративное управление)</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Поддержка юридической функции в период отпуска штатного юриста</li>
         </ul>
-        <div class="price"><b>от 40 000 ₽ <small>/ мес</small></b><a href="#contact">Подробнее</a></div>
+        <div class="price"><b>от 40 000₽<small>/месяц</small></b><a href="#contact">узнать подробности</a></div>
       </article>
       <article class="plan">
         <h3>Для корпораций</h3>
-        <p class="for">Нужны узкоспециализированные компетенции.</p>
+        <p class="for">Когда необходимо решать узкоспециализированные юридические задачи корпорации</p>
         <ul>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Аутсорсинг отдельного направления права</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Договорный блок и консультации</li>
-          <li><svg width="12" height="12"><use href="#i-check"/></svg>Проектные задачи: ИС, судебная работа</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Аутсорсинг задач какого направления права (например, сопровождение корпоративного управления, поддержка в сфере трудового права и т.д.)</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Ведение любых рутинных задач: договорный блок или консультации</li>
+          <li><svg width="12" height="12"><use href="#i-check"/></svg>Ведение проектных задач (интеллектуальное право, претензионно-исковая работа)</li>
         </ul>
-        <div class="price"><b>от 50 000 ₽ <small>/ мес</small></b><a href="#contact">Подробнее</a></div>
+        <div class="price"><b>от 50 000₽<small>/месяц</small></b><a href="#contact">узнать подробности</a></div>
       </article>
     </div>
 
     <div class="examples">
-      <h3>Примеры текущих контрактов</h3>
-      <table class="table">
-        <thead><tr><th>Клиент</th><th>Формат</th><th>В месяц</th><th>С нами с</th></tr></thead>
-        <tbody>
-          <tr class="hl"><td>Строительная фирма полного цикла</td><td>Полный комплекс</td><td>50 000 ₽</td><td>2018</td></tr>
-          <tr><td>Государственное учреждение</td><td>Полный комплекс</td><td>65 000 ₽</td><td>2018</td></tr>
-          <tr><td>Логистическая компания</td><td>Поддержка юротдела</td><td>49 000 ₽</td><td>2020</td></tr>
-          <tr><td>Клиника эстетической медицины</td><td>Полный комплекс</td><td>43 000 ₽</td><td>2020</td></tr>
-          <tr><td>Дилер премиальных автомобилей</td><td>Поддержка юротдела</td><td>39 000 ₽</td><td>2019</td></tr>
-          <tr><td>ИТ-компания</td><td>Полный комплекс</td><td>20 000 ₽</td><td>2018</td></tr>
-        </tbody>
-      </table>
+      <h3>Примеры из отрасли</h3>
+      <div class="cases">
+        <div class="case hl"><b>Строительная фирма полного цикла</b><div class="sum">Полный комплекс <strong>50 000 ₽</strong></div><small>Старт контракта: 2018 г</small></div>
+        <div class="case"><b>Дилер премиальных автомобилей</b><div class="sum">Поддержка юр.отдела: <strong>39 000 ₽</strong></div><small>Старт контракта: 2019 г</small></div>
+        <div class="case"><b>Клиника эстетической медицины</b><div class="sum">Полный комплекс: <strong>43 000 ₽</strong></div><small>Старт контракта: 2020 г</small></div>
+        <div class="case"><b>ИТ-компания</b><div class="sum">Полный комплекс <strong>20 000 ₽</strong></div><small>Старт контракта: 2018 г</small></div>
+        <div class="case"><b>Логистическая фирма</b><div class="sum">Поддержка юр.отдела: <strong>49 000 ₽</strong></div><small>Старт контракта: 2020 г</small></div>
+        <div class="case"><b>Государственное учреждение</b><div class="sum">Полный комплекс <strong>65 000 ₽</strong></div><small>Старт контракта: 2018 г</small></div>
+      </div>
     </div>
-    <p class="dnote">Шесть одинаковых карточек-примеров сведены в таблицу: цены легко сравнить, строительный клиент поднят наверх. На узком экране таблица перестраивается в список.</p>
+    <p class="dnote">Примеры собраны в компактную сетку вместо крупных карточек, строительный клиент мягко подсвечен.</p>
   </div>
 </section>
 
@@ -516,138 +552,104 @@ body.notes .dnote{display:block}
 <section class="section">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Почему KELIN</div>
-      <h2>Нам доверяют больше 100 российских компаний</h2>
+      <h2>Понятная выгода</h2>
+      <p>Мы можем заменить полноценный юридический отдел или стать незаменимым помощником для существующего</p>
     </div>
     <div class="benefits">
-      <div class="benefit"><h3>Ресурс команды</h3><p>Несколько десятков юристов в штате, курьеры, специалисты по работе с госорганами и партнёры для экспертиз.</p></div>
-      <div class="benefit"><h3>Ответ за 2 дня</h3><p>Гарантированный срок ответа позволяет решать вопросы быстро и не останавливать работу.</p></div>
-      <div class="benefit"><h3>Готовая база решений</h3><p>Шаблоны договоров, кадровых документов и обращений в госорганы ускоряют работу.</p></div>
-      <div class="benefit"><h3>Понятная цена</h3><p>Фиксированный ежемесячный платёж. Просто ставьте задачи юристам и получайте решения.</p></div>
-      <div class="benefit"><h3>Разные отрасли права</h3><p>Специалисты по договорному, трудовому, корпоративному, налоговому праву и ИС в одной команде.</p></div>
-      <div class="benefit"><h3>Подтверждённая репутация</h3><p>Предоставим письменные и устные рекомендации клиентов по запросу.</p></div>
+      <div class="benefit"><h3>Быстрая реакция на запросы</h3><p>Гарантированное время ответа до 2 дней позволяет оперативно решать юридические проблемы и минимизировать риски для бизнеса.</p></div>
+      <div class="benefit"><h3>Конкурентные цены</h3><p>Умеем определять справедливые цены для клиентов, исходя из потребностей бизнеса.</p></div>
+      <div class="benefit"><h3>Проверенная репутация</h3><p>Имеем кейсы и готовы отправить письменное подтверждение надежности и качества нашей работы (по запросу).</p></div>
+      <div class="benefit"><h3>Экспертность в разных отраслях права</h3><p>Доступ к команде юристов в сфере айти технологий с различными специализациями обеспечивает высокое качество услуг и возможность решения сложных юридических вопросов в разных областях права.</p></div>
+      <div class="benefit"><h3>Гибкость в работе</h3><p>KELIN адаптируется под конкретные потребности бизнеса, позволяя клиентам выбирать необходимые услуги и оптимизировать затраты в зависимости от текущих задач и проектов.</p></div>
     </div>
-    <p class="dnote">Два почти одинаковых блока («Почему выбирают KELIN» и «Понятная выгода») объединены в один, без повторов.</p>
+    <div class="inline-cta">
+      <div><b>Готовы всё подтвердить делом</b><span>Выполним тестовое задание от вас</span></div>
+      <a class="btn btn-ghost" href="#contact">Отправить тестовое</a>
+    </div>
   </div>
 </section>
 
 <!-- STEPS -->
 <section class="section">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Как начать</div>
-      <h2>От заявки до работы за три дня</h2>
-    </div>
+    <div class="head"><h2>Быстрый старт с Kelin</h2></div>
     <ol class="steps">
-      <li><b>Сегодня</b><p>Вы оставляете заявку, мы разбираемся в бизнесе и задачах.</p></li>
-      <li><b>Завтра</b><p>Рассчитываем стоимость и присылаем предложение.</p></li>
-      <li><b>Послезавтра</b><p>Подписываем договор, проводим установочную встречу и берём задачи в работу.</p></li>
+      <li><b>Сегодня</b><p>Вы оставляете заявку, а мы квалифицируем ваш бизнес и его задачи</p></li>
+      <li><b>Завтра</b><p>Делаем расчет стоимости и представляем вам предложение</p></li>
+      <li><b>Послезавтра</b><p>Подписываем договор. Проводим установочную встречу и начинаем решать ваши задачи</p></li>
     </ol>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="section">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Отзывы</div>
-      <h2>Клиенты о работе с нами</h2>
+    <div class="inline-cta">
+      <div><b>Попробуйте сейчас — и вы никогда не захотите снова искать исполнителей</b><span>Просто свяжитесь с нами</span></div>
+      <a class="btn btn-primary" href="#contact">Оставить заявку</a>
     </div>
-    <div class="reviews">
-      <article class="review">
-        <blockquote>«В одном из судебных споров юристы KELIN не только отстояли наши интересы, но и взыскали с оппонентов встречным иском ущерб в двукратном размере».</blockquote>
-        <details><summary>Читать полностью</summary>
-          <p>Мы сотрудничаем с KELIN почти два года. Всё началось с представления наших интересов в суде.</p>
-          <p>Сейчас юристы на постоянной основе ведут для нас претензионно-исковую работу с должниками, помогают в сфере интеллектуальной собственности и решают споры с сотрудниками.</p>
-        </details>
-        <div class="who"><span class="mono">ЯН</span><div><b>Яна Натарова</b><span>Генеральный директор, DEKART</span></div></div>
-      </article>
-      <article class="review">
-        <blockquote>«Хотим отметить вовлечённость юристов KELIN в бизнес и внимание к деталям. Коллеги всегда на связи и решают задачи в полном объёме».</blockquote>
-        <details><summary>Читать полностью</summary>
-          <p>Юристы KELIN полностью отвечают за корпоративный блок: проводят аудит, вносят изменения в уставные документы, выявляют основные риски.</p>
-          <p>Также занимаются трудовым правом и консультируют сотрудников и контрагентов по конфиденциальности и коммерческой тайне.</p>
-        </details>
-        <div class="who"><span class="mono">ЮД</span><div><b>Юлия Дудина</b><span>Генеральный директор, DSM</span></div></div>
-      </article>
-      <article class="review">
-        <blockquote>«Обратились после увольнения штатного юриста. Отмечаем системность работы: для нас это очень важно».</blockquote>
-        <details><summary>Читать полностью</summary>
-          <p>Юристы оперативно консультируют по договорным задачам (в том числе разработали договор на выполнение НИОКР), по трудовому и корпоративному праву. Также мы ставили задачи по таможенному праву и ИС.</p>
-        </details>
-        <div class="who"><span class="mono">АБ</span><div><b>Андрей Белинский</b><span>Генеральный директор, SSI SCHÄFER</span></div></div>
-      </article>
-    </div>
-    <p class="reviews-foot">Нужны отзывы клиентов из строительства? <a href="#contact">Запросите рекомендации</a>, мы организуем звонок с коллегами по отрасли.</p>
-    <p class="dnote">Каждый отзыв начинается с короткой сути, полный текст раскрывается по клику. Карточки одной высоты, вместо фото нейтральные монограммы.</p>
   </div>
 </section>
 
 <!-- TEAM -->
 <section class="section">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Команда</div>
-      <h2>За качество решений отвечают руководители</h2>
-    </div>
+    <div class="head"><h2>За качество решений отвечают наши руководители</h2></div>
     <div class="team">
-      <div class="person"><span class="mono">ДК</span><div><b>Дмитрий Келин</b><span>Генеральный директор</span></div></div>
-      <div class="person"><span class="mono">АС</span><div><b>Анастасия Самотоина</b><span>Руководитель юридического блока</span></div></div>
-      <div class="person"><span class="mono">ДМ</span><div><b>Дмитрий Молчанов</b><span>Коммерческий директор</span></div></div>
+      <div class="person"><span class="mono">ДК</span><div><b>Дмитрий Келин</b><span>генеральный директор</span></div></div>
+      <div class="person"><span class="mono">АС</span><div><b>Анастасия Самотоина</b><span>руководитель юридического блока</span></div></div>
+      <div class="person"><span class="mono">ДМ</span><div><b>Дмитрий Молчанов</b><span>коммерческий директор</span></div></div>
     </div>
-    <p style="margin-top:24px"><a href="#">Вся команда</a></p>
-    <p class="dnote">В концепте вместо фото монограммы. На сайте сюда встанут единообразные портреты в высоком разрешении, снятые в одном стиле, или блок останется таким же.</p>
+    <p style="margin-top:24px"><a href="#">подробнее о команде</a></p>
+    <p class="dnote">В концепте вместо фото монограммы. На сайте сюда встанут единообразные портреты в высоком разрешении, снятые в одном стиле.</p>
   </div>
 </section>
 
 <!-- PROSE -->
 <section class="section">
-  <div class="wrap split">
-    <article class="prose">
-      <div class="eyebrow">Подробнее</div>
-      <h2>Чем занимается юрист в строительстве</h2>
-      <p>Строительный юрист решает правовые вопросы, связанные с реализацией строительных проектов. В отличие от универсального юриста, у него узкопрофильные знания и опыт именно в этой отрасли.</p>
-      <p>Юридическое сопровождение помогает избежать многих проблем, с которыми сталкиваются застройщики, проектировщики, подрядчики и субподрядчики.</p>
-      <p class="pull">Юрист по строительным спорам часто может решить конфликт, не доводя дело до суда.</p>
-      <p>Он анализирует ситуацию, изучает договорные обязательства, рассматривает позицию каждой стороны и проводит переговоры, результатом которых становятся выгодные для всех условия.</p>
-      <h3>Многообразие задач</h3>
-      <p>Любая строительная деятельность требует множества разрешительных документов. Поэтому юрист по строительству должен разбираться в недвижимости, практике лицензирования и земельном праве. Это экономит время и снижает риск штрафов или приостановки стройки.</p>
-      <p>Строительные юристы в Москве помогают урегулировать разногласия, связанные с качеством строительства, задержкой сроков сдачи объектов и другими претензиями.</p>
-    </article>
-    <aside class="aside" aria-label="Кому подходит">
-      <b>Кому мы помогаем</b>
-      <ul>
-        <li>Застройщикам</li>
-        <li>Генподрядчикам и подрядчикам</li>
-        <li>Субподрядчикам</li>
-        <li>Проектным и архитектурным бюро</li>
-        <li>Поставщикам материалов</li>
-        <li>Арендодателям спецтехники</li>
-      </ul>
-    </aside>
+  <div class="wrap">
+    <h2 style="margin-bottom:clamp(32px,4vw,48px)">Юрист в строительстве</h2>
+    <div class="box">
+      <div>
+        <p>Строительный юрист — это специалист, который занимается правовыми вопросами, связанными с реализацией строительных проектов. В отличие от универсальных юристов, он обладает узкопрофильными знаниями и опытом в строительной сфере.</p>
+        <p>Юридическое сопровождение строительных компаний позволяет избежать множества проблем, с которыми сталкиваются застройщики, проектировщики, подрядчики и субподрядчики и другие участники процесса. Например, юрист (адвокат) по строительным спорам может решить конфликт, не доводя дело до суда: проанализирует ситуацию, изучит договорные обязательства, рассмотрит позицию каждой стороны и проведет переговоры, результатом которых будут выгодные условия для всех.</p>
+      </div>
+      <div class="figure">
+        <svg width="220" height="140" viewBox="0 0 220 140" fill="none" stroke="#1e2328" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="20" y="20" width="96" height="112" rx="6" fill="#fff"/><path d="M36 44h48M36 58h64M36 72h64M36 86h40" stroke="#c3c7cd"/>
+          <circle cx="150" cy="70" r="34" fill="#fff"/><path d="M174 94l22 22"/><path d="M138 70l9 9 17-18" stroke="#235ffa" stroke-width="1.75"/>
+        </svg>
+        <span>Экспертное сопровождение</span>
+      </div>
+    </div>
+    <div class="box">
+      <div>
+        <p>Любая строительная деятельность требует получения большого количества разрешительных документов, поэтому юрист по вопросам строительства должен разбираться в вопросах недвижимости, в практике лицензирования, а также в земельном праве. Это экономит время и снижает риски возникновения штрафов или вообще приостановки строительства.</p>
+        <p>Строительные юристы в Москве помогают урегулировать разногласия, связанные с качеством строительства, задержками сроков сдачи объектов или другими претензиями.</p>
+      </div>
+      <div class="figure">
+        <svg width="220" height="140" viewBox="0 0 220 140" fill="none" stroke="#1e2328" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="16" y="36" width="64" height="84" rx="4" fill="#fff"/><rect x="78" y="22" width="64" height="84" rx="4" fill="#fff"/><rect x="140" y="36" width="64" height="84" rx="4" fill="#fff"/>
+          <path d="M28 56h40M28 68h40M28 80h28M90 42h40M90 54h40M90 66h28M152 56h40M152 68h40M152 80h28" stroke="#c3c7cd"/>
+          <circle cx="110" cy="92" r="7" stroke="#235ffa" stroke-width="1.5"/>
+        </svg>
+        <span>Многообразие услуг</span>
+      </div>
+    </div>
+    <p class="dnote">Колонка текста ограничена ~65 знаками в строке. Растровые фото рядом с текстом заменены векторными схемами, подписи сохранены.</p>
   </div>
-  <div class="wrap"><p class="dnote">Текстовая колонка ограничена ~65 знаками в строке, это комфортная длина для чтения. Справа короткая выжимка для тех, кто не читает длинные тексты.</p></div>
 </section>
 
 <!-- FAQ -->
 <section class="section">
   <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Вопросы</div>
-      <h2>Часто задаваемые вопросы</h2>
-    </div>
+    <div class="head"><h2>Часто задаваемые вопросы</h2></div>
     <div class="faq">
       <details open>
-        <summary>Можно ли снизить риск споров с недобросовестными заказчиками и субподрядчиками?<svg width="16" height="16"><use href="#i-plus"/></svg></summary>
-        <p>Да. Для этого нужны договоры подряда с чёткими условиями, своевременная фиксация всех изменений и соглашений, проверка контрагентов, продуманные условия оплаты и предоплаты, пункт о досудебном урегулировании споров и заблаговременная работа с профессиональными юристами.</p>
+        <summary>Можно ли уменьшить риск судебных споров с недобросовестными заказчиками и субподрядчиками?<svg width="16" height="16"><use href="#i-plus"/></svg></summary>
+        <p>Да, для этого нужно разработать договоры подряда с четкими условиями, своевременно фиксировать все изменения и соглашения, проверить контрагентов, определить условия оплаты или предоплаты, включить в договор положение о досудебном решении споров, а также заранее работать с профессиональными юристами и адвокатами.</p>
       </details>
       <details>
-        <summary>Кто может обратиться к юристу по строительным делам?<svg width="16" height="16"><use href="#i-plus"/></svg></summary>
-        <p>Строительные организации, застройщики, подрядчики, поставщики материалов, заказчики работ, арендодатели строительной техники, архитектурные и проектные компании.</p>
+        <summary>Кто может обратиться за помощью к юристу (адвокату) по строительным делам?<svg width="16" height="16"><use href="#i-plus"/></svg></summary>
+        <p>Строительные организации, застройщики, подрядчики, поставщики материалов, заказчики работ, арендодатели строительной техники, архитектурные и проектные компании</p>
       </details>
       <details>
-        <summary>Чем может помочь строительный юрист?<svg width="16" height="16"><use href="#i-plus"/></svg></summary>
-        <p>Разработать и проверить документы, урегулировать споры, оформить разрешения и согласования, взаимодействовать с госорганами и защищать интересы компании на всех этапах строительства.</p>
+        <summary>Как строительный юрист может помочь?<svg width="16" height="16"><use href="#i-plus"/></svg></summary>
+        <p>Юридические услуги в строительстве включают разработку и проверку документов, разрешение споров, оформление разрешений и согласований, взаимодействие с государственными органами, защита интересов компании на всех этапах строительства и т.д.</p>
       </details>
     </div>
   </div>
@@ -657,24 +659,22 @@ body.notes .dnote{display:block}
 <section class="section" id="contact">
   <div class="wrap contact">
     <div>
-      <div class="eyebrow">Связаться</div>
-      <h2>Обсудим вашу задачу</h2>
-      <p class="lead">Оставьте телефон, и юрист перезвонит, чтобы разобраться в ситуации и предложить условия работы.</p>
+      <h2>Получите специальные условия для вашей организации</h2>
+      <p class="lead">Давайте обсудим ваши юридические проблемы, пожелания и сформируем индивидуальные условия подписки.</p>
+      <p class="msg-line">Вместо заявки можно сразу написать нам в мессенджеры</p>
       <div class="messengers">
-        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l8-6"/></svg>Telegram</a>
-        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 20l1.4-4A8 8 0 1 1 8 18.6z"/></svg>WhatsApp</a>
-        <a href="tel:+74954877007"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>8 495 487-70-07</a>
+        <a href="#" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l8-6"/></svg>Telegram</a>
+        <a href="#" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 20l1.4-4A8 8 0 1 1 8 18.6z"/></svg>WhatsApp</a>
       </div>
     </div>
-    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Заявка отправлена';">
-      <label>Имя<input type="text" autocomplete="name" placeholder="Как к вам обращаться"></label>
-      <label>Телефон<input type="tel" autocomplete="tel" placeholder="+7 ___ ___-__-__" required></label>
-      <label>Тема<select><option>Строительный спор</option><option>Договор подряда</option><option>Госзакупки</option><option>Постоянное сопровождение</option><option>Другое</option></select></label>
-      <button class="btn btn-primary" type="submit">Отправить заявку</button>
-      <p class="fine">Отправляя заявку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и <a href="#">обработкой персональных данных</a>.</p>
+    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Ваша заявка успешно отправлена';">
+      <p class="muted">Оставьте номер телефона, и мы свяжемся с вами в ближайшее время.</p>
+      <input type="tel" autocomplete="tel" placeholder="+7 ___ ___-__-__" aria-label="Телефон" required>
+      <button class="btn btn-primary" type="submit">Начать бесплатно</button>
+      <p class="fine">Отправляя заявку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>, <a href="#">политикой обработки персональных данных</a></p>
     </form>
   </div>
-  <div class="wrap"><p class="dnote">Вместо четырёх разных всплывающих форм одна форма в конце страницы. Все кнопки «консультация» ведут сюда.</p></div>
+  <div class="wrap"><p class="dnote">Все кнопки ведут к одной форме внизу страницы вместо четырёх разных всплывающих окон.</p></div>
 </section>
 </main>
 
@@ -683,13 +683,13 @@ body.notes .dnote{display:block}
     <div class="foot">
       <div>
         <a class="logo" href="#">KELIN</a>
-        <p style="margin-top:12px;max-width:28ch">Команда юристов для надёжной защиты вашего бизнеса.</p>
+        <p style="margin-top:12px;max-width:28ch">Команда юристов для надежной защиты вашего бизнеса</p>
       </div>
-      <div><b>Услуги</b><ul><li><a href="#">Договорное право</a></li><li><a href="#">Арбитражный юрист</a></li><li><a href="#">Взыскание долгов</a></li><li><a href="#">Налоговый юрист</a></li></ul></div>
-      <div><b>Отрасли</b><ul><li><a href="#">Строительство</a></li><li><a href="#">Производство</a></li><li><a href="#">Транспорт</a></li><li><a href="#">IT</a></li></ul></div>
-      <div><b>Компания</b><ul><li><a href="#">О компании</a></li><li><a href="#">Как мы работаем</a></li><li><a href="#">Медиацентр</a></li><li><a href="#">Контакты</a></li></ul></div>
+      <ul><li><a href="#">Защита бизнеса 360°</a></li><li><a href="#">Договорное право</a></li><li><a href="#">Арбитражный юрист</a></li><li><a href="#">Юрист по трудовому праву</a></li><li><a href="#">Взыскание долгов с юридических лиц</a></li><li><a href="#">Налоговый юрист</a></li></ul>
+      <ul><li><a href="#">Юрист по рекламе</a></li><li><a href="#">Юридический аутсорсинг</a></li><li><a href="#">Юрист по стройке</a></li><li><a href="#">Юрист на производстве</a></li><li><a href="#">Юрист IT</a></li><li><a href="#">Транспортный юрист</a></li></ul>
+      <ul><li><a href="#">Как мы работаем</a></li><li><a href="#">О компании</a></li><li><a href="#">Контакты</a></li><li><a href="#">Медиацентр</a></li></ul>
     </div>
-    <div class="legal"><span>ООО «КЕЛИН», ИНН 9706007244 · © 2026</span><a href="#">Политика конфиденциальности</a></div>
+    <div class="legal"><span>ООО «КЕЛИН» ИНН 9706007244 · © 2026. Все права защищены</span><a href="#">Политика конфиденциальности</a></div>
   </div>
 </footer>
 
