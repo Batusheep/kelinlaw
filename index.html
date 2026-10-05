@@ -329,8 +329,13 @@ footer{background:var(--surface);padding:56px 0 40px;font-size:.9375rem;color:va
 .dnote{display:none;margin:12px 0 0;padding:10px 14px;font-size:.8125rem;line-height:1.5;color:#7a4b00;background:#fff7e6;border:1px dashed #f0b35a;border-radius:8px;max-width:var(--measure)}
 .dnote::before{content:"Что изменено · ";font-weight:600}
 body.notes .dnote{display:block}
-.notes-toggle{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:inherit;font-size:.875rem;font-weight:500;line-height:1;cursor:pointer;box-shadow:0 4px 16px rgba(30,35,40,.08)}
-.notes-toggle[aria-pressed="true"]{background:#fff7e6;border-color:#f0b35a}
+.notes-toggle{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:10px;height:48px;padding:0 20px 0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(31,168,85,.84);-webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6);color:#fff;font-family:inherit;font-size:.9375rem;font-weight:500;line-height:1;cursor:pointer;white-space:nowrap;box-shadow:0 8px 32px rgba(15,80,40,.28),inset 0 1px 0 rgba(255,255,255,.35);transition:background .15s,transform .15s}
+.notes-toggle:hover{background:rgba(31,168,85,.94)}
+.notes-toggle:active{transform:translateX(-50%) scale(.98)}
+.notes-toggle .count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.25);font-size:.75rem}
+.notes-toggle[aria-pressed="true"]{background:rgba(30,35,40,.72);box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.2)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.notes-toggle{background:#1fa855}}
+main{padding-bottom:0}footer{padding-bottom:96px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -837,7 +842,7 @@ function closeVideo(){const d=document.getElementById('video');d.querySelector('
 document.getElementById('video').addEventListener('close',()=>document.querySelector('#video video').pause());
 </script>
 
-<button class="notes-toggle" type="button" aria-pressed="false" onclick="const on=document.body.classList.toggle('notes');this.setAttribute('aria-pressed',on);this.lastChild.textContent=on?' Скрыть пометки':' Показать пометки'">
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3 2h10v12l-5-3-5 3z"/></svg> Показать пометки</button>
+<button class="notes-toggle" type="button" aria-pressed="false" onclick="const on=document.body.classList.toggle('notes');this.setAttribute('aria-pressed',on);this.querySelector('.label').textContent=on?'Скрыть пометки':'Показать пометки'">
+  <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M3 2h10v12l-5-3-5 3z"/></svg><span class="label">Показать пометки</span><span class="count">10</span></button>
 </body>
 </html>
