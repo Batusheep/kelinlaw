@@ -144,8 +144,6 @@ svg{display:block}
 .table th{text-align:left;font-weight:500;color:var(--muted);font-size:.8125rem;padding:0 12px 12px 0;border-bottom:1px solid var(--line)}
 .table td{padding:14px 12px 14px 0;border-bottom:1px solid var(--line);color:var(--ink)}
 .table td:last-child,.table th:last-child{text-align:right;padding-right:0}
-.table tr.hl td:first-child{font-weight:500}
-.table tr.hl td{background:linear-gradient(90deg,var(--accent-soft),transparent 70%)}
 @media (max-width:560px){
   .table thead{display:none}
   .table tr{display:grid;grid-template-columns:1fr auto;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -153,9 +151,7 @@ svg{display:block}
   .table td:nth-child(2){grid-row:2;color:var(--muted);font-size:.875rem}
   .table td:nth-child(3){grid-row:span 2;align-self:center}
   .table td:nth-child(4){display:none}
-  .table tr.hl{background:var(--accent-soft);margin:0 -12px;padding:14px 12px;border-radius:8px}
-  .table tr.hl td{background:none}
-}
+    }
 
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,48px);counter-reset:n;list-style:none;padding:0;margin:0}
@@ -488,7 +484,7 @@ body.notes .dnote{display:block}
       <table class="table">
         <thead><tr><th>Клиент</th><th>Формат</th><th>В месяц</th><th>С нами с</th></tr></thead>
         <tbody>
-          <tr class="hl"><td>Строительная фирма полного цикла</td><td>Полный комплекс</td><td>50 000 ₽</td><td>2018</td></tr>
+          <tr><td>Строительная фирма полного цикла</td><td>Полный комплекс</td><td>50 000 ₽</td><td>2018</td></tr>
           <tr><td>Государственное учреждение</td><td>Полный комплекс</td><td>65 000 ₽</td><td>2018</td></tr>
           <tr><td>Логистическая компания</td><td>Поддержка юротдела</td><td>49 000 ₽</td><td>2020</td></tr>
           <tr><td>Клиника эстетической медицины</td><td>Полный комплекс</td><td>43 000 ₽</td><td>2020</td></tr>
@@ -497,7 +493,7 @@ body.notes .dnote{display:block}
         </tbody>
       </table>
     </div>
-    <p class="dnote">Шесть одинаковых карточек-примеров сведены в таблицу: цены легко сравнить, строительный клиент поднят наверх. На узком экране таблица перестраивается в список.</p>
+    <p class="dnote">Шесть одинаковых карточек-примеров сведены в таблицу: цены легко сравнить, строительный клиент стоит первым. На узком экране таблица перестраивается в список.</p>
   </div>
 </section>
 
