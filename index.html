@@ -331,6 +331,10 @@ footer{background:var(--surface);padding:56px 0 40px;font-size:.9375rem;color:va
 body.notes .dnote{display:block}
 .notes-toggle{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:10px;height:48px;padding:0 20px 0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(31,168,85,.84);-webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6);color:#fff;font-family:inherit;font-size:.9375rem;font-weight:500;line-height:1;cursor:pointer;white-space:nowrap;box-shadow:0 8px 32px rgba(15,80,40,.28),inset 0 1px 0 rgba(255,255,255,.35);transition:background .15s,transform .15s}
 .notes-toggle:hover{background:rgba(31,168,85,.94)}
+.notes-toggle::before{content:"";position:absolute;inset:-1px;border-radius:inherit;box-shadow:0 0 0 0 rgba(31,168,85,.55);animation:notes-pulse 2.4s cubic-bezier(.2,.6,.4,1) infinite;pointer-events:none}
+.notes-toggle[aria-pressed="true"]::before{animation:none}
+@keyframes notes-pulse{0%{box-shadow:0 0 0 0 rgba(31,168,85,.55)}70%{box-shadow:0 0 0 14px rgba(31,168,85,0)}100%{box-shadow:0 0 0 0 rgba(31,168,85,0)}}
+@media (prefers-reduced-motion:reduce){.notes-toggle::before{animation:none}}
 .notes-toggle:active{transform:translateX(-50%) scale(.98)}
 .notes-toggle .count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.25);font-size:.75rem}
 .notes-toggle[aria-pressed="true"]{background:rgba(30,35,40,.72);box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.2)}
