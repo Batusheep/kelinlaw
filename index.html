@@ -370,6 +370,33 @@ body.notes .nmark{display:grid}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.notes-toggle{background:#1fa855}}
 main{padding-bottom:0}footer{padding-bottom:96px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Mobile tweaks */
+.sm-only{display:none}
+@media (max-width:560px){
+  .lg-only{display:none}.sm-only{display:inline}
+  .hero .actions .btn{width:100%}
+  .problems{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;background:none;border:0;border-radius:0;margin:0 calc(-1 * var(--gutter));padding:0 var(--gutter) 8px;scroll-padding:0 var(--gutter);scrollbar-width:none}
+  .problems::-webkit-scrollbar{display:none}
+  .problem{flex:0 0 84%;scroll-snap-align:start;border:1px solid var(--line);border-radius:var(--radius)}
+  .problem.cta{border-color:transparent}
+  .table tr{display:flex;flex-direction:column;gap:2px}
+  .table td:nth-child(3){align-self:flex-start;margin-top:6px;font-weight:500}
+  .step.now .btn{width:100%}
+  .msg-block .messengers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .msg-block .messengers .msg{justify-content:center;padding:0 8px;gap:6px}
+  .msg-block .messengers .msg svg{flex:none}
+  .foot-social{flex-direction:column}
+  .foot-social a{width:100%}
+}
+@media (max-width:640px){
+  .team{gap:40px}
+  .scale{min-height:460px}
+  .scale-stats{width:50%}
+  .scale-stats b{font-size:2.5rem}
+  .scale-stats span{font-size:.875rem}
+  .scale img{width:min(84%,340px);right:-6%;bottom:-6%}
+}
 </style>
 </head>
 <body>
@@ -537,7 +564,7 @@ main{padding-bottom:0}footer{padding-bottom:96px}
         <h2>Давайте решим вашу первую задачу бесплатно</h2>
         <p>Мы готовы к тесту наших компетенций, предлагайте задачу.</p>
       </div>
-      <a class="btn btn-primary" href="#contact">Получить специальные условия</a>
+      <a class="btn btn-primary" href="#contact"><span class="lg-only">Получить специальные условия</span><span class="sm-only">Получить условия</span></a>
     </div>
   </div>
 </section>
