@@ -249,12 +249,12 @@ footer{background:var(--surface);padding:56px 0 40px;font-size:.9375rem;color:va
 .foot-social a{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:.875rem}
 .foot-social a:hover{border-color:var(--ink)}
 .foot-social svg{color:var(--accent);flex:none}
-.legal{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:.8125rem}
-.legal-row{display:flex;flex-wrap:wrap;gap:8px 28px}
+.legal{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:.8125rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:16px clamp(32px,6vw,120px);align-items:start}
+.legal-row{display:grid;gap:6px;justify-items:start}
 .legal-row a{color:var(--muted)}
-.cookies{margin-top:12px;max-width:90ch;color:#8a9097;line-height:1.5}
+.cookies{margin:0;max-width:90ch;color:#8a9097;line-height:1.5}
 .cookies a{color:inherit}
-@media (max-width:1024px){.foot{grid-template-columns:1fr}}
+@media (max-width:1024px){.foot,.legal{grid-template-columns:1fr}}
 @media (max-width:640px){.foot-nav{grid-template-columns:1fr 1fr}.foot-nav>div:first-child{grid-column:1/-1}}
 @media (max-width:400px){.foot-nav{grid-template-columns:1fr}}
 
