@@ -20,6 +20,7 @@
   --accent-soft:#eef3ff;
   --radius:10px;
   --measure:65ch;
+  --short:42ch;         /* короткие подписи под заголовками: две строки */
   --wrap:1684px;        /* как .container на сайте */
   --gutter:clamp(16px,6.15vw,118px);
   --section:clamp(64px,10vw,128px);
@@ -85,7 +86,7 @@ svg{display:block}
 .hero-art{color:var(--ink);max-width:460px;justify-self:end;width:100%}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,48px);margin-top:clamp(56px,8vw,96px);padding-top:32px;border-top:1px solid var(--line)}
 .fact b{display:block;font-size:clamp(1.75rem,1.4rem + 1vw,2.25rem);font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.1}
-.fact span{display:block;margin-top:.5rem;font-size:.9375rem;color:var(--muted);max-width:26ch}
+.fact span{display:block;margin-top:.5rem;font-size:.9375rem;color:var(--muted);max-width:calc(var(--short) - 2ch)}
 @media (max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-art{justify-self:start;max-width:300px}.facts{grid-template-columns:1fr}}
 
 /* Problems */
@@ -158,7 +159,7 @@ svg{display:block}
 .steps li{padding-top:1.5rem;border-top:2px solid var(--line)}
 .steps li:first-child{border-top-color:var(--accent)}
 .steps b{display:block;color:var(--ink);font-weight:600;font-size:1.125rem;margin-bottom:.5rem}
-.steps p{color:var(--muted);font-size:.975rem;max-width:30ch}
+.steps p{color:var(--muted);font-size:.9375rem;max-width:var(--short)}
 @media (max-width:720px){.steps{grid-template-columns:1fr}}
 
 /* Benefits */
@@ -177,8 +178,8 @@ svg{display:block}
 .review details[open] summary{margin-bottom:.75rem}
 .who{margin-top:auto;display:flex;align-items:center;gap:12px;padding-top:1rem;border-top:1px solid var(--line)}
 .mono{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:.8125rem;font-weight:600;color:var(--ink);flex:none}
-.who b{display:block;color:var(--ink);font-weight:500;font-size:.9375rem}
-.who span{font-size:.8125rem;color:var(--muted)}
+.who b{display:block;color:var(--ink);font-weight:500;font-size:.9375rem;line-height:1.35}
+.who span{display:block;margin-top:2px;font-size:.8125rem;line-height:1.35;color:var(--muted)}
 .reviews-foot{margin-top:24px;font-size:.9375rem;color:var(--muted)}
 
 /* Team */
