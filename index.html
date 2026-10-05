@@ -49,7 +49,7 @@ svg{display:block}
 .muted{color:var(--muted)}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.375rem;border-radius:999px;font:500 1rem/1 inherit;font-family:inherit;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.375rem;border-radius:999px;font-family:inherit;font-size:1rem;font-weight:500;line-height:1;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
 .btn-primary{background:var(--accent);color:#fff}
 .btn-primary:hover{background:var(--accent-ink);color:#fff}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
@@ -194,12 +194,18 @@ svg{display:block}
 .prose h2{margin-bottom:1.5rem}
 .prose h3{margin:2.25rem 0 .75rem}
 .prose p+p{margin-top:1.1em}
-.prose .pull{margin:2rem 0;padding-left:1.25rem;border-left:2px solid var(--line);color:var(--ink);font-size:1.125rem}
-.split{display:grid;grid-template-columns:minmax(0,var(--measure)) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
-.aside{position:sticky;top:96px;font-size:.9375rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
-.aside b{display:block;color:var(--ink);font-weight:500;margin-bottom:.75rem}
-.aside ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
-@media (max-width:900px){.split{grid-template-columns:1fr}.aside{position:static}}
+.split{display:grid;grid-template-columns:minmax(0,var(--measure)) minmax(0,1fr);gap:clamp(32px,6vw,120px);align-items:start}
+.quote{margin:0;position:sticky;top:110px;max-width:34rem;padding-top:4px}
+.quote blockquote{margin:20px 0 0;color:var(--ink);font-size:clamp(1.375rem,1.1rem + .9vw,1.875rem);line-height:1.3;font-weight:500;letter-spacing:-.015em}
+.quote figcaption{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.975rem;max-width:var(--short)}
+.audience{margin-top:clamp(56px,7vw,96px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(180px,1fr) 4fr;gap:24px clamp(32px,6vw,120px);align-items:start}
+.audience h3{font-size:1.125rem}
+.audience ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.audience li{display:flex;align-items:center;gap:14px;padding:16px 18px;background:var(--surface);border-radius:var(--radius);color:var(--ink);font-size:.975rem;line-height:1.35}
+.audience li svg{flex:none;color:var(--ink)}
+@media (max-width:1100px){.audience{grid-template-columns:1fr}}
+@media (max-width:900px){.split{grid-template-columns:1fr}.quote{position:static}.audience ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.audience ul{grid-template-columns:1fr}}
 
 /* FAQ */
 .faq{max-width:52rem;border-top:1px solid var(--line)}
@@ -271,11 +277,26 @@ footer{background:var(--surface);padding:56px 0 40px;font-size:.9375rem;color:va
 .video-close{position:absolute;top:-48px;right:0;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:pointer}
 .video-close:hover{background:rgba(255,255,255,.24)}
 
+
+.messengers .msg{height:48px;padding:0 20px 0 16px;font-weight:500;color:#fff;border:0}
+.messengers .msg.tg{background:#229ed9}
+.messengers .msg.wa{background:#1fa855}
+.messengers .msg:hover{color:#fff;filter:brightness(.92)}
+.requisites{margin:clamp(32px,4vw,48px) 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px;padding-top:24px;border-top:1px solid var(--line)}
+.requisites dt{font-size:.8125rem;color:var(--muted);margin-bottom:4px}
+.requisites dd{margin:0;color:var(--ink);font-size:.9375rem;line-height:1.45}
+.requisites a{color:var(--ink);text-decoration:none}
+.requisites a:hover{color:var(--accent)}
+@media (max-width:480px){.requisites{grid-template-columns:1fr}}
+.check{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;font-size:.875rem;color:var(--muted);cursor:pointer;margin:4px 0}
+.check input{width:20px;height:20px;margin:1px 0 0;padding:0;accent-color:var(--accent);cursor:pointer}
+.check a{color:var(--muted)}
+
 /* Пометки дизайнера */
 .dnote{display:none;margin:12px 0 0;padding:10px 14px;font-size:.8125rem;line-height:1.5;color:#7a4b00;background:#fff7e6;border:1px dashed #f0b35a;border-radius:8px;max-width:var(--measure)}
 .dnote::before{content:"Что изменено · ";font-weight:600}
 body.notes .dnote{display:block}
-.notes-toggle{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font:500 .875rem/1 inherit;font-family:inherit;cursor:pointer;box-shadow:0 4px 16px rgba(30,35,40,.08)}
+.notes-toggle{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:inherit;font-size:.875rem;font-weight:500;line-height:1;cursor:pointer;box-shadow:0 4px 16px rgba(30,35,40,.08)}
 .notes-toggle[aria-pressed="true"]{background:#fff7e6;border-color:#f0b35a}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -610,31 +631,39 @@ body.notes .dnote{display:block}
 
 <!-- PROSE -->
 <section class="section">
-  <div class="wrap split">
-    <article class="prose">
+  <div class="wrap">
+    <div class="head">
       <div class="eyebrow">Подробнее</div>
       <h2>Чем занимается юрист в строительстве</h2>
-      <p>Строительный юрист решает правовые вопросы, связанные с реализацией строительных проектов. В отличие от универсального юриста, у него узкопрофильные знания и опыт именно в этой отрасли.</p>
-      <p>Юридическое сопровождение помогает избежать многих проблем, с которыми сталкиваются застройщики, проектировщики, подрядчики и субподрядчики.</p>
-      <p class="pull">Юрист по строительным спорам часто может решить конфликт, не доводя дело до суда.</p>
-      <p>Он анализирует ситуацию, изучает договорные обязательства, рассматривает позицию каждой стороны и проводит переговоры, результатом которых становятся выгодные для всех условия.</p>
-      <h3>Многообразие задач</h3>
-      <p>Любая строительная деятельность требует множества разрешительных документов. Поэтому юрист по строительству должен разбираться в недвижимости, практике лицензирования и земельном праве. Это экономит время и снижает риск штрафов или приостановки стройки.</p>
-      <p>Строительные юристы в Москве помогают урегулировать разногласия, связанные с качеством строительства, задержкой сроков сдачи объектов и другими претензиями.</p>
-    </article>
-    <aside class="aside" aria-label="Кому подходит">
-      <b>Кому мы помогаем</b>
+    </div>
+    <div class="split">
+      <article class="prose">
+        <p>Строительный юрист решает правовые вопросы, связанные с реализацией строительных проектов. В отличие от универсального юриста, у него узкопрофильные знания и опыт именно в этой отрасли.</p>
+        <p>Юридическое сопровождение помогает избежать многих проблем, с которыми сталкиваются застройщики, проектировщики, подрядчики и субподрядчики.</p>
+        <h3>Многообразие задач</h3>
+        <p>Любая строительная деятельность требует множества разрешительных документов. Поэтому юрист по строительству должен разбираться в недвижимости, практике лицензирования и земельном праве. Это экономит время и снижает риск штрафов или приостановки стройки.</p>
+        <p>Строительные юристы в Москве помогают урегулировать разногласия, связанные с качеством строительства, задержкой сроков сдачи объектов и другими претензиями.</p>
+      </article>
+      <figure class="quote">
+        <svg width="36" height="28" viewBox="0 0 36 28" aria-hidden="true"><path d="M0 28V16C0 7 5 1.5 14 0l1.5 4C10 5.5 7.5 9 7.5 13H14v15zm20 0V16c0-9 5-14.5 14-16l1.5 4C30 5.5 27.5 9 27.5 13H34v15z" fill="#235ffa"/></svg>
+        <blockquote>Юрист по строительным спорам часто может решить конфликт, не доводя дело до суда.</blockquote>
+        <figcaption>Он анализирует ситуацию, изучает договорные обязательства, рассматривает позицию каждой стороны и проводит переговоры, результатом которых становятся выгодные для всех условия.</figcaption>
+      </figure>
+    </div>
+
+    <div class="audience">
+      <h3>Кому мы помогаем</h3>
       <ul>
-        <li>Застройщикам</li>
-        <li>Генподрядчикам и подрядчикам</li>
-        <li>Субподрядчикам</li>
-        <li>Проектным и архитектурным бюро</li>
-        <li>Поставщикам материалов</li>
-        <li>Арендодателям спецтехники</li>
+        <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 28V12h10v16M15 28V6h12v22M3 28h26"/><path d="M8 16h4M8 20h4M8 24h4M19 10h4M19 14h4M19 18h4M19 22h4"/></svg><span>Застройщикам</span></li>
+        <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0"/><path d="M4 20h24v3H4z"/><path d="M13 11v5M19 11v5"/><path d="M16 10v-2"/></svg><span>Генподрядчикам и подрядчикам</span></li>
+        <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 6a5 5 0 0 0-6 6L5 20a2.8 2.8 0 0 0 4 4l8-8a5 5 0 0 0 6-6l-3 3-3-1-1-3z"/></svg><span>Субподрядчикам</span></li>
+        <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l-8 22M16 4l8 22"/><circle cx="16" cy="5" r="1.5"/><path d="M10 20h12"/><path d="M4 28h24"/></svg><span>Проектным и архитектурным бюро</span></li>
+        <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="18" width="11" height="6"/><rect x="17" y="18" width="11" height="6"/><rect x="10" y="11" width="12" height="6"/><path d="M3 28h26"/></svg><span>Поставщикам материалов</span></li>
+        <li><svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 24h16v-6l-3-5H8l-2 5H3z"/><circle cx="7" cy="25" r="2.5"/><circle cx="15" cy="25" r="2.5"/><path d="M19 18l6-10 4 3-3 7"/><path d="M26 18h3v4h-5"/></svg><span>Арендодателям спецтехники</span></li>
       </ul>
-    </aside>
+    </div>
+    <p class="dnote">Статья идёт колонкой ~65 знаков. Главная мысль вынесена рядом крупной цитатой. Аудитория оформлена отдельным блоком с иконками под статьёй, чтобы её не путали с оглавлением.</p>
   </div>
-  <div class="wrap"><p class="dnote">Текстовая колонка ограничена ~65 знаками в строке, это комфортная длина для чтения. Справа короткая выжимка для тех, кто не читает длинные тексты.</p></div>
 </section>
 
 <!-- FAQ -->
@@ -668,21 +697,27 @@ body.notes .dnote{display:block}
       <div class="eyebrow">Связаться</div>
       <h2>Обсудим вашу задачу</h2>
       <p class="lead">Оставьте телефон, и юрист перезвонит, чтобы разобраться в ситуации и предложить условия работы.</p>
+      <p class="msg-line">Или напишите нам в мессенджер:</p>
       <div class="messengers">
-        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l8-6"/></svg>Telegram</a>
-        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 20l1.4-4A8 8 0 1 1 8 18.6z"/></svg>WhatsApp</a>
-        <a href="tel:+74954877007"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>8 495 487-70-07</a>
+        <a class="msg tg" href="https://t.me/KELIN_bot" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.2 2.9 11.4c-1 .4-1 1.6 0 1.9l4.6 1.4 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6l3.2-15.3c.2-.9-.6-1.7-1.4-1.5zM9.7 14.6l-.5 3.4-1.2-3.7 9.2-6-7.5 6.3z" fill="currentColor"/></svg>Telegram</a>
+        <a class="msg wa" href="https://api.whatsapp.com/send/?phone=79399007432" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5zm5.4 13.3c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z" fill="currentColor"/></svg>WhatsApp</a>
       </div>
+      <dl class="requisites">
+        <div><dt>Телефон</dt><dd><a href="tel:+74954877007">8 (495) 487-70-07</a></dd></div>
+        <div><dt>Почта</dt><dd><a href="mailto:tender@kelinlaw.ru">tender@kelinlaw.ru</a></dd></div>
+        <div><dt>Адрес</dt><dd>г. Москва, улица Мясницкая, дом 24/7, строение 1</dd></div>
+        <div><dt>Наименование</dt><dd>ООО «КЕЛИН» ИНН 9706007244</dd></div>
+      </dl>
     </div>
     <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Заявка отправлена';">
       <label>Имя<input type="text" autocomplete="name" placeholder="Как к вам обращаться"></label>
       <label>Телефон<input type="tel" autocomplete="tel" placeholder="+7 ___ ___-__-__" required></label>
       <label>Тема<select><option>Строительный спор</option><option>Договор подряда</option><option>Госзакупки</option><option>Постоянное сопровождение</option><option>Другое</option></select></label>
+      <label class="check"><input type="checkbox" required><span>Я соглашаюсь с <a href="#">политикой конфиденциальности</a> и <a href="#">обработкой персональных данных</a></span></label>
       <button class="btn btn-primary" type="submit">Отправить заявку</button>
-      <p class="fine">Отправляя заявку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a> и <a href="#">обработкой персональных данных</a>.</p>
     </form>
   </div>
-  <div class="wrap"><p class="dnote">Вместо четырёх разных всплывающих форм одна форма в конце страницы. Все кнопки «консультация» ведут сюда.</p></div>
+  <div class="wrap"><p class="dnote">Вместо четырёх разных всплывающих форм одна форма в конце страницы, все кнопки «консультация» ведут сюда. Согласие на обработку данных сделано обязательным чек-боксом. Рядом мессенджеры и реквизиты компании.</p></div>
 </section>
 </main>
 
